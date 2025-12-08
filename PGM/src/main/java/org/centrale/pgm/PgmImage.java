@@ -12,18 +12,52 @@ import java.io.IOException;
  *
  * @author dytri
  */
-public class PgmImage {
-    String comment;
-    int h;
-    int l;
-    int[][] pixels;
+public class PGMImage {
+    private String comment;
+    private int h;
+    private int l;
+    private int[][] pixels;
 
-    public PgmImage(String comment, int h, int l) {
+    public PGMImage(String comment, int h, int l) {
         this.comment = comment;
         this.h = h;
         this.l = l;
         this.pixels = new int[h][l];
     }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public int getH() {
+        return h;
+    }
+
+    public int getL() {
+        return l;
+    }
+
+    public int[][] getPixels() {
+        return pixels;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public void setH(int h) {
+        this.h = h;
+    }
+
+    public void setL(int l) {
+        this.l = l;
+    }
+
+    public void setPixels(int[][] pixels) {
+        this.pixels = pixels;
+    }
+    
+    
     
     public void save(String chemin){
          try (BufferedWriter writer = new BufferedWriter(new FileWriter(chemin))) {
